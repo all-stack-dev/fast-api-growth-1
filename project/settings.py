@@ -4,7 +4,8 @@ from typing import AsyncGenerator
 
 from fastapi import FastAPI
 
-from project import get_logger, NoSQLClient
+from project import get_logger, NoSQLClient, RedisClient
+
 
 class App(FastAPI):
     def __init__(self):
@@ -19,7 +20,9 @@ class App(FastAPI):
 
     async def on_start(self):
         await NoSQLClient.initialize_database()
-        self.logger.info("Initialized Database")
+        self.logger.info("Initialized Mongodb Database")
+        await RedisClient.initialize_redis()
+        self.logger.info("Initialized Redis Database")
 
     def handle_docs(self):
         pass

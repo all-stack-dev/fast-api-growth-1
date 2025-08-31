@@ -1,8 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo.server_api import ServerApi
 
-from project import get_logger
-from project import EnvironmentConfig
+from project import get_logger, EnvironmentConfig
 
 
 class NoSQLClient:
