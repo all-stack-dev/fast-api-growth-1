@@ -4,7 +4,7 @@ from typing import AsyncGenerator
 
 from fastapi import FastAPI
 
-from project import get_logger
+from project import get_logger, NoSQLClient
 
 class App(FastAPI):
     def __init__(self):
@@ -14,11 +14,12 @@ class App(FastAPI):
     @asynccontextmanager
     async def lifespan(self, app: FastAPI)-> AsyncGenerator[None, None]:
         self.logger.info("Starting app")
-        self.on_start()
+        await self.on_start()
         yield
 
-    def on_start(self):
-        pass
+    async def on_start(self):
+        await NoSQLClient.initialize_database()
+        self.logger.info("Initialized Database")
 
     def handle_docs(self):
         pass

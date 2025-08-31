@@ -5,7 +5,7 @@ This is the personal project of `theperfectguy`.
 Following are the target for the development.
 
 1. Yaml based environment configuration. [COMPLETED]
-2. DB Connection within start. 
+2. DB Connection within start.
 3. BLOB Storage Connection using MINIO or BOTO3.
 4. Middleware based usages.
    - Cors Middleware
