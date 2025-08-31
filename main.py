@@ -1,6 +1,6 @@
-from fastapi import FastAPI
+from project.settings import App
 
-app = FastAPI()
+app = App()
 
 @app.get("/echo")
 async def echo():
