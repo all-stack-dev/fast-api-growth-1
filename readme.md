@@ -6,7 +6,7 @@ Following are the target for the development.
 
 1. Yaml based environment configuration. [COMPLETED]
 2. DB Connection within start. [COMPLETED]
-3. BLOB Storage Connection using MINIO or BOTO3.
+3. BLOB Storage Connection using MINIO or BOTO3 [COMPLETED].
 4. Middleware based usages.
    - Cors Middleware
    - Auth Middleware (Both for Authentication and Authorization)

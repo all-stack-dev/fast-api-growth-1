@@ -33,7 +33,6 @@ class NoSQLClient:
             try:
                 cls._mongo_client = AsyncIOMotorClient(url, server_api=ServerApi('1'))
                 cls._database = cls._mongo_client[database_name]
-                logger.info("Successfully connected to database")
             except Exception as exception:
                 logger.error(f"Failed to connect to database. Exception: {exception}")
                 exit(1)
