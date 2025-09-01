@@ -37,7 +37,6 @@ class RedisClient:
                     connection_pool = redis.ConnectionPool(host=host, port=port, db=0)
                     cls._redis_client = redis.Redis(connection_pool=connection_pool)
                     await cls._redis_client.ping()
-                    logger.info("Redis connection established")
                 except Exception as exception:
                     logger.error(f"Cannot connect to redis server: {exception}")
                     exit(1)
